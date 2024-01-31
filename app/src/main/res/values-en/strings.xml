@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Deportes Miguel Manager</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="management_of">"Management of "</string>
+    <string name="goalkeeper">Goalkeeper</string>
+    <string name="defender">Defense</string>
+    <string name="midfielder">Midfielder</string>
+    <string name="forward">Forward</string>
+</resources>

@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Deportes Miguel Manager</string>
+    <integer name="maxPlayers">10</integer>
+    <string-array name="football_positions">
+        <item>Portero</item>
+        <item>Defensa</item>
+        <item>Centrocampista</item>
+        <item>Delantero</item>
+    </string-array>
+    <string name="goalkeeper">Goalkeeper</string>
+    <string name="defender">Defense</string>
+    <string name="midfielder">Midfielder</string>
+    <string name="forward">Forward</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="management_of">Management of</string>
+    <string name="hashtag" translatable="false">#</string>
+
+
 </resources>
