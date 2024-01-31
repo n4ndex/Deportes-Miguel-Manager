@@ -2,9 +2,11 @@ package deportesmiguel.manager.mainpackage.controller;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Scanner;
@@ -15,18 +17,32 @@ import deportesmiguel.manager.mainpackage.model.Player;
 import deportesmiguel.manager.mainpackage.model.Team;
 
 public class PlayerManager extends AppCompatActivity {
+    private TextView titleTextView;
+    private List<Team> teams;
+    private List<Match> matches;
+    private Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.player_manager_view);
+        titleTextView = findViewById(R.id.titleTextView);
+        titleTextView.setOnClickListener(v -> {
+            Bundle returnBundle = new Bundle();
+            returnBundle.putSerializable("teams", (Serializable) teams);
+            returnBundle.putSerializable("matches", (Serializable) matches);
+            Intent returnIntent = new Intent(this, PlayersManager.class);
+            returnIntent.putExtras(returnBundle);
+            setResult(RESULT_OK, returnIntent);
+            finish();
+        });
         // recieve bundle
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         // get data from bundle
-        List<Team> teams = (List<Team>) bundle.getSerializable("teams");
-        List<Match> matches = (List<Match>) bundle.getSerializable("matches");
-        Player player = (Player) bundle.getSerializable("player");
+        teams = (List<Team>) bundle.getSerializable("teams");
+        matches = (List<Match>) bundle.getSerializable("matches");
+        player = (Player) bundle.getSerializable("player");
         for (Match match : matches) {
             if (match.getLocalTeamPlayers() != null) {
                 boolean played = false;
@@ -54,6 +70,7 @@ public class PlayerManager extends AppCompatActivity {
             System.out.println("5. Cambiar imagen");
             System.out.println("6. Salir");
         } while (option != 0);
+        teams.get(0).getPlayers()[0].setName("Miguel Ángel");
 
     }
 }

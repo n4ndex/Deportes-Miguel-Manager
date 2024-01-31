@@ -20,8 +20,8 @@ import deportesmiguel.manager.mainpackage.model.Player;
 import deportesmiguel.manager.mainpackage.model.Team;
 
 public class PlayersManager extends AppCompatActivity {
-    private final List<Team> teams = new ArrayList<>();
-    private final List<Match> matches = new ArrayList<>();
+    private List<Team> teams = new ArrayList<>();
+    private List<Match> matches = new ArrayList<>();
     private ListView playersListView;
     private PlayerArrayAdapter playerArrayAdapter;
 
@@ -47,6 +47,12 @@ public class PlayersManager extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
 
             }
+//            Intent intent = getIntent();
+//            Bundle bundle = intent.getExtras();
+//            List<Team> recTeams = (List<Team>) bundle.getSerializable("teams");
+//            this.teams = recTeams;
+//            List<Match> recMatches = (List<Match>) bundle.getSerializable("matches");
+//            this.matches = recMatches;
             playerArrayAdapter.setPlayers(Arrays.asList(teams.get(0).getPlayers()));
             playerArrayAdapter.notifyDataSetChanged();
         }
