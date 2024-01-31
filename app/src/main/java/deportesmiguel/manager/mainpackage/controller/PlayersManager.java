@@ -45,16 +45,14 @@ public class PlayersManager extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
             if (resultCode == RESULT_OK) {
-
+                Bundle bundle = data.getExtras();
+                List<Team> recTeams = (List<Team>) bundle.getSerializable("teams");
+                this.teams = recTeams;
+                List<Match> recMatches = (List<Match>) bundle.getSerializable("matches");
+                this.matches = recMatches;
+                playerArrayAdapter.setPlayers(Arrays.asList(teams.get(0).getPlayers()));
+                playerArrayAdapter.notifyDataSetChanged();
             }
-//            Intent intent = getIntent();
-//            Bundle bundle = intent.getExtras();
-//            List<Team> recTeams = (List<Team>) bundle.getSerializable("teams");
-//            this.teams = recTeams;
-//            List<Match> recMatches = (List<Match>) bundle.getSerializable("matches");
-//            this.matches = recMatches;
-            playerArrayAdapter.setPlayers(Arrays.asList(teams.get(0).getPlayers()));
-            playerArrayAdapter.notifyDataSetChanged();
         }
     }
 
