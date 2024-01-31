@@ -50,11 +50,12 @@ public class PlayersManager extends AppCompatActivity {
                 this.teams = recTeams;
                 List<Match> recMatches = (List<Match>) bundle.getSerializable("matches");
                 this.matches = recMatches;
-                playerArrayAdapter.setPlayers(Arrays.asList(teams.get(0).getPlayers()));
-                playerArrayAdapter.notifyDataSetChanged();
             }
+            playerArrayAdapter.setPlayers(Arrays.asList(teams.get(0).getPlayers()));
+            playerArrayAdapter.notifyDataSetChanged();
         }
     }
+
 
     private void generateData() {
         Calendar calendar = Calendar.getInstance();
