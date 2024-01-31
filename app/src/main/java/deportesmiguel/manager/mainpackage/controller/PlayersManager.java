@@ -13,7 +13,6 @@ import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
 
-import deportesmiguel.manager.mainpackage.PlayerArrayAdapter;
 import deportesmiguel.manager.mainpackage.R;
 import deportesmiguel.manager.mainpackage.controller.listeners.PlayersManagerListeners;
 import deportesmiguel.manager.mainpackage.model.Match;

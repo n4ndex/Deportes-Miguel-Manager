@@ -1,4 +1,4 @@
-package deportesmiguel.manager.mainpackage;
+package deportesmiguel.manager.mainpackage.controller;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 
 import java.util.List;
 
+import deportesmiguel.manager.mainpackage.R;
 import deportesmiguel.manager.mainpackage.model.Player;
 
 public class PlayerArrayAdapter extends ArrayAdapter<Player> {
